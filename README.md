@@ -1,2 +1,2 @@
-# quantile_nonpara_reg_arma
+# Quantile regression
 quantile estimation for nonparametric models with ARMA error
