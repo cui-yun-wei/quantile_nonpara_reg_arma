@@ -1,2 +1,2 @@
 # Quantile regression
-quantile estimation for nonparametric models with ARMA error
+quantile estimation for nonparametric models with ARMA errors
