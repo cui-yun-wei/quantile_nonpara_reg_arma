@@ -65,7 +65,7 @@ install.packages(c("nimble", "splines", "data.table"))
 # simulation. The simulation results will be saved as .txt files in the same
 # working directory.
 #
-# Function arguments:
+# Function arguments for AR(2) case simulation:
 #   alpha1         AR(2) coefficient for lag 1 (default: 0.5).
 #   alpha2         AR(2) coefficient for lag 2 (default: 0.1).
 #   sim_len        Number of simulation repetitions (default: 1000).
@@ -91,15 +91,46 @@ install.packages(c("nimble", "splines", "data.table"))
 #
 #####################################################################################################
 
-# Load the R function for simulation.
+# Load the R function for simulation. AR(2)
 source("regression_timeseries_quantile_ar2_simu.R")
-
-# Run the simulation with specified parameter settings.
+## Run the simulation with a specified parameter setting.
 regression_timeseries_quantile_ar2_simu(
     alpha1 = 0.5,
     alpha2 = 0.1,
     sim_len = 1000,
-    tau = 0.2,
+    tau = 0.1,
     innovation_dis = "chisq5",
     J_n = 9
 )
+
+# Load the R function for simulation. AR(1)
+source('regression_timeseries_quantile_ar1_simu.R')
+## Run the simulation with a specified parameter setting.
+regression_timeseries_quantile_ar1_powertran_simu(
+    alpha1= 0.6,  
+    sim_len = 1000, 
+    tau = 0.10, 
+    innovation_dis = "chisq5_variance_one", 
+    J_n =9)
+
+# Load the R function for simulation. ARMA(1,1)
+source('regression_timeseries_quantile_arma11_simu.R')
+## Run the simulation with a specified parameter setting.
+regression_timeseries_quantile_arma11_simu(
+    alpha= 0.6, 
+    beta= 0.3, 
+    sim_len = 1000, 
+    tau=0.10, 
+    innovation_dis = 'chisq5_variance_one', 
+    J_n = 9)
+
+# Load the R function for simulation. MA(1)
+source('regression_timeseries_quantile_ma1_simu.R')
+## Run the simulation with a specified parameter setting.
+regression_timeseries_quantile_ma1_simu(beta1 = 0.7, sim_len=1000, tau=0.10, innovation_dis='chisq5_variance_one')
+
+# Load the R function for simulation. MA(2)
+source('regression_timeseries_quantile_ma2_simu.R')
+## Run the simulation with a specified parameter setting.
+regression_timeseries_quantile_ma2_simu(beta1 = 0.4, beta2= 0.2, sim_len = 1000, tau=0.10, innovation_dis = 'chisq5_variance_one')
+
