@@ -111,7 +111,8 @@ regression_timeseries_quantile_ar1_powertran_simu(
     sim_len = 1000, 
     tau = 0.10, 
     innovation_dis = "chisq5_variance_one", 
-    J_n =9)
+    J_n =9
+ )
 
 # Load the R function for simulation. ARMA(1,1)
 source('regression_timeseries_quantile_arma11_simu.R')
@@ -122,15 +123,27 @@ regression_timeseries_quantile_arma11_simu(
     sim_len = 1000, 
     tau=0.10, 
     innovation_dis = 'chisq5_variance_one', 
-    J_n = 9)
+    J_n = 9
+ )
 
 # Load the R function for simulation. MA(1)
 source('regression_timeseries_quantile_ma1_simu.R')
 ## Run the simulation with a specified parameter setting.
-regression_timeseries_quantile_ma1_simu(beta1 = 0.7, sim_len=1000, tau=0.10, innovation_dis='chisq5_variance_one')
+regression_timeseries_quantile_ma1_simu(
+    beta1 = 0.7, 
+    sim_len=1000, 
+    tau=0.10, 
+    innovation_dis='chisq5_variance_one'
+ )
 
 # Load the R function for simulation. MA(2)
 source('regression_timeseries_quantile_ma2_simu.R')
 ## Run the simulation with a specified parameter setting.
-regression_timeseries_quantile_ma2_simu(beta1 = 0.4, beta2= 0.2, sim_len = 1000, tau=0.10, innovation_dis = 'chisq5_variance_one')
+regression_timeseries_quantile_ma2_simu(
+    beta1 = 0.4, 
+    beta2= 0.2, 
+    sim_len = 1000, 
+    tau=0.10, 
+    innovation_dis = 'chisq5_variance_one'
+  )
 
